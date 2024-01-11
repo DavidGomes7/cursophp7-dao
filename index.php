@@ -1,6 +1,7 @@
 <?php 
 
 require_once("config.php");
+
 /*
 $sql = new Sql();
 
@@ -23,9 +24,26 @@ echo json_encode($usuarios);
 //echo json_encode($search);
 
 // Carrega um usuário usando o login e a senha
+//$usuario = new Usuario();
+//$usuario->login("root", "qwert");
+//echo $usuario;
+
+// Insert com Dao, criando um novo usuário
+
+//$aluno = new Usuario("aluno", "@lun0");
+
+////$aluno->setDeslogin("aluno");
+////$aluno->setDessenha("@lun0");
+
+//$aluno->insert();
+//echo $aluno;
+
 $usuario = new Usuario();
-$usuario->login("root", "qwert");
+
+$usuario->loadById(6);
+
+$usuario->update("professor", "12345");
 
 echo $usuario;
 
- ?>
+?>
